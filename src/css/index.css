@@ -33,12 +33,39 @@
     justify-content: space-around;
 }
 
-.lists ul li {
+.task-list ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: lightgray;
-    height: 40px;
+    height: 60px;
     border-bottom: 1px solid white;
+    text-align: left;
+    padding: 10px 20px;
+    margin: 20px 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 10px;
+}
+
+form input {
+    height: 40px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.btnAddTask {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
     text-align: center;
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    color: white;
 }
