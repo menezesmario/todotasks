@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Nova Tarefa</title>
+</head>
+
+    <body>
+        <div class="title-bar">
+            <div class="title-page">Lista de Tarefas</div>
+        </div>
+    
+        <main >          
+            <section class="add-task">
+                <form>
+                    <input type="text" id="inputTask" placeholder="Add New Task">
+                    <label for="deadline" class="labelInput">Realizar até</label>
+                    <input type="date" id="deadLine">
+                    <span onclick="newTask()"class="btnAddTask">Add</span>
+                </form>
+            </section>
+        </main>
+    
+        <nav class="nav-bar">
+            <ul>
+                <li>Início</li>
+                <li>Lista de Tarefas</li>
+                <li>Nova Tarefa</li>
+            </ul>
+        </nav>
+        
+    </body>
+</html>

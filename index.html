@@ -14,17 +14,18 @@
 
     <main>
         <section class="task-list">
-            <ul>
-                <li>Mercado</li>
-                <li class="checked">Reunião</li>
-                <li>Aula</li>
-                <li>Academia</li>
+            <ul id="myList">
+                <li class="taskItem">
+           
+                </li>
+
             </ul>
         </section>
         <section class="add-task">
             <form>
                 <input type="text" id="inputTask" placeholder="Add New Task">
-                <input type="date">
+                <label for="deadline" class="labelInput">Realizar até</label>
+                <input type="date" id="deadLine">
                 <span onclick="newTask()"class="btnAddTask">Add</span>
             </form>
         </section>
@@ -40,5 +41,12 @@
     
 </body>
 
+<script
+  type="text/javascript"
+  src="./index.js">
+</script>
+
 
 </html>
+
+
