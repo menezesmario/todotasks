@@ -1,10 +1,15 @@
 'use strict';
 
-let data = [
-    {'task': 'Imersão 42', 'status': '', 'deadline': '20/9'},
-    {'task': 'Inglês', 'status': 'checked', 'deadline': '22/9'},
-    {'task': 'Corrida', 'status': '', 'deadline': ''}
-]
+// let data = [
+//     {'task': 'Imersão 42', 'status': '', 'deadline': '20/9', 'creation': ''},
+//     {'task': 'Inglês', 'status': 'checked', 'deadline': '22/9', 'creation': ''},
+//     {'task': 'Corrida', 'status': '', 'deadline': '', 'creation': ''}
+// ]
+
+
+
+const getData = () => JSON.parse(localStorage.getItem('taskList')) ?? [];
+const setData = (data) => localStorage.setItem('taskList', JSON.stringify(data)) 
 
 const createTask = (newTask, deadline, status) => {
     let task = document.createElement('li');
@@ -45,6 +50,7 @@ const clearList = () => {
 
 const loadList = () => {
     clearList();
+    const data = getData();
     data.forEach(task => createTask(task.task, task.deadline, task.status));
 }
 
@@ -68,21 +74,23 @@ document.getElementById('deadLine').value = currentDate;
 
 const deadline = document.getElementById('deadLine').value;
 console.log(deadline);
-// const deadlineDate = deadline.getDate();
-// const deadlineMonth = deadline.getMonth();
 
-// console.log(deadlineDate + deadlineMonth)
 
 const addTask = () => {
     const task = document.getElementById('inputTask').value;
     const deadline = document.getElementById('deadLine').value;
+    let currentDate = new Date();
+    currentDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`;
+    const data = getData();
     
     if (deadline !== ""){
-        data.push({'task': task, 'status': '', 'deadline': deadline})
+        
+        data.push({'task': task, 'status': '', 'deadline': deadline, 'creation': currentDate})
+        setData(data);
         loadList();
     } 
 
-    task = '';
+    document.getElementById('inputTask').value = '';
     console.log(data)
 }
 
