@@ -22,12 +22,12 @@
             </ul>
         </section>
         <section class="add-task">
-            <form>
-                <input type="text" id="inputTask" placeholder="Add New Task">
+            <div class="newTaskForm">
+                <input type="text" id="inputTask" placeholder="Add New Task" required>
                 <label for="deadline" class="labelInput">Realizar até</label>
                 <input type="date" id="deadLine">
-                <span onclick="newTask()"class="btnAddTask">Add</span>
-            </form>
+                <span  onclick="addTask() " class="btnAddTask" id="btnNewTask">Add</span>
+            </div>
         </section>
     </main>
 

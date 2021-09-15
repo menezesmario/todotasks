@@ -1,7 +1,12 @@
 'use strict';
 
+let data = [
+    {'task': 'Imersão 42', 'status': '', 'deadline': '20/9'},
+    {'task': 'Inglês', 'status': 'checked', 'deadline': '22/9'},
+    {'task': 'Corrida', 'status': '', 'deadline': ''}
+]
 
-const createTask = (newTask, status='') => {
+const createTask = (newTask, deadline, status) => {
     let task = document.createElement('li');
     task.classList.add('taskItem');
     task.innerHTML = `
@@ -9,7 +14,7 @@ const createTask = (newTask, status='') => {
             <div class="cardTask">
                 <div class="taskHeader">
                     <span id="nameTask">${newTask}</span>                            
-                    <span id="deadline">20 sep</span>
+                    <span id="deadline">${deadline}</span>
                 </div>
                 <div class="taskInfo">
                     <span id="creation">Criado em</span>
@@ -31,28 +36,57 @@ const createTask = (newTask, status='') => {
 }
 
 
+const clearList = () => {
+    const myList = document.getElementById('myList')
+    while(myList.firstChild) {
+        myList.removeChild(myList.lastChild);
+    }
+}
+
+const loadList = () => {
+    clearList();
+    data.forEach(task => createTask(task.task, task.deadline, task.status));
+}
+
+// const addTask = (event) => {
+//     const add = event.click
+// }
+
+
+// DATE FORMAT
+let today = new Date();
+let day = today.getDate();
+let month = today.getMonth()+1;
+let year = today.getFullYear();
+
+if (month < 10) {
+    month = '0'+month;
+}
+let currentDate = `${year}-${month}-${day}`
+
+document.getElementById('deadLine').value = currentDate;
+
+const deadline = document.getElementById('deadLine').value;
+console.log(deadline);
+// const deadlineDate = deadline.getDate();
+// const deadlineMonth = deadline.getMonth();
+
+// console.log(deadlineDate + deadlineMonth)
+
+const addTask = () => {
+    const task = document.getElementById('inputTask').value;
+    const deadline = document.getElementById('deadLine').value;
+    
+    if (deadline !== ""){
+        data.push({'task': task, 'status': '', 'deadline': deadline})
+        loadList();
+    } 
+
+    task = '';
+    console.log(data)
+}
 
 
 
-{/* <li id="taskItem">
-    <div class="taskSection">
-        <div class="cardTask">
-            <div class="taskHeader">
-                <span id="nameTask">Tarefa</span>                            
-                <span id="deadline">20 sep</span>
-            </div>
-            <div class="taskInfo">
-                <span id="creation">Criado em</span>
-                <span id="status">Status:</span>
-            </div>
-        </div>
-        <div class="btnSection">
-            <div id="edit" class="btnTask">
-                Editar
-            </div>
-            <div id="remove" class="btnTask remove">
-                Excluir
-            </div>
-        </div>
-    </div>
-</li> */}
+loadList();
+
