@@ -47,12 +47,8 @@ const loadList = () => {
     data.forEach(task => createTask(task.task, task.deadline, task.status));
 }
 
-// const addTask = (event) => {
-//     const add = event.click
-// }
 
-
-// DATE FORMAT
+// CURRENT DATE FORMAT
 let today = new Date();
 let day = today.getDate();
 let month = today.getMonth()+1;

@@ -11,19 +11,33 @@ a {
     text-decoration: none;
 }
 
-:root {
+/* COLOR THEME GREEN */
+/* :root {
     --primary-color: #173F42;
     --second-color: #246369;
     --third-color: #1F575C;
     --fourth-color: #39A0A9;
     --fifth-color: #4FDDE9;
     --danger-color: #b66677;
+  } */
+
+/* COLOR THEME DRACULA  */
+
+:root {
+    --primary-color: #282A36;
+    --second-color: #44475A;
+    --third-color: #F8F8F2;
+    --fourth-color: #FF79C6;
+    --fifth-color: #50FA7B;
+    --danger-color: #b66677;
   }
 
-  body {
+
+
+body {
     background-color: var(--primary-color);
 
-  }
+}
 
 .title-bar {
     display: flex;
@@ -31,7 +45,7 @@ a {
     justify-content: center;
     text-align: center;
     height: 50px;
-    background-color: var(--third-color);
+    background-color: var(--second-color);
 }
 
 .title-page {
@@ -189,6 +203,7 @@ a {
     justify-content: center;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
     height: 70px;
     width: 70px;
