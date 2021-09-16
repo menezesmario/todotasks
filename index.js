@@ -30,7 +30,7 @@ const createTask = (newTask, deadline, status) => {
                     edit
                     </span>
                 </div>
-                <div id="btnRemove" class="btnTask remove">
+                <div id="btnRemove" onclick="removeItem()" class="btnTask remove">
                     <span class="material-icons-outlined">
                     delete
                     </span>
@@ -51,7 +51,18 @@ const clearList = () => {
 }
 
 const removeItem = () => {
-    console.log('teste')
+    let remove = document.getElementsByClassName("remove")
+    for(let i = 0; i < remove.length; i++) {
+        remove[i].onclick = function() {
+            console.log([i])
+            const data = getData()
+            console.log(data[i]);
+            data.splice(i, 1)
+            setData(data);
+            loadList();
+        }        
+}
+
 }
 
 const loadList = () => {
