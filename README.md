@@ -9,13 +9,13 @@ Abaixo estão listadas as features a serem trabalhadas durante a semana:
 
 
 
-- [ ]  **Telas iniciais**
+- [X]  **Telas iniciais**
 
 	- Homepage;
 	- Criação de ToDos;
 	- Listagem de ToDos já criados.
   
-- [ ] **Criação de ToDos**
+- [X] **Criação de ToDos**
 
 	Inicialmente, o usuário poderá criar ToDos com as seguintes informações:
 	- **Descrição**
@@ -27,10 +27,10 @@ Abaixo estão listadas as features a serem trabalhadas durante a semana:
 	- **Status**
 		Um ToDo deve ser criado com o status de incompleto.
 		
-- [ ]   **Listagem de ToDos**
+- [X]   **Listagem de ToDos**
 
 
-- [ ] **Armazenamento dados**
+- [X] **Armazenamento dados**
     
    
 # Opcional 1

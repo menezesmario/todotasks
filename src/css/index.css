@@ -7,6 +7,9 @@
     color: var(--fifth-color);
 }
 
+a {
+    text-decoration: none;
+}
 
 :root {
     --primary-color: #173F42;
@@ -205,4 +208,11 @@
     flex-direction: column;
     justify-content: center;
     margin: auto;
+}
+
+@media screen and (min-width: 790px) {
+    main {
+        width: 600px;
+        margin: auto;
+    }
 }
