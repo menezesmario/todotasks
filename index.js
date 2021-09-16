@@ -1,5 +1,10 @@
 'use strict';
 
+// let getData = [
+//     {'task': 'Imersão 42', 'status': '', 'deadline': '20/9'},
+//     {'task': 'Inglês', 'status': 'checked', 'deadline': '22/9'},
+//     {'task': 'Corrida', 'status': '', 'deadline': ''}
+// ]
 
 const getData = () => JSON.parse(localStorage.getItem('taskList')) ?? [];
 const setData = (data) => localStorage.setItem('taskList', JSON.stringify(data)) 
@@ -15,16 +20,20 @@ const createTask = (newTask, deadline, status) => {
                     <span id="deadline">${deadline}</span>
                 </div>
                 <div class="taskInfo">
-                    <span id="creation">Criado em</span>
+                    <span id="creation"></span>
                     <span id="status">Status: <input type="checkbox" ${status}></span>
                 </div>
             </div>
             <div class="btnSection">
-                <div id="edit" class="btnTask">
-                    Editar
+                <div id="btnEdit" class="btnTask">
+                    <span class="material-icons-outlined" style="color: var(--second-color)">
+                    edit
+                    </span>
                 </div>
-                <div id="remove" class="btnTask remove">
-                    Excluir
+                <div id="btnRemove" class="btnTask remove">
+                    <span class="material-icons-outlined">
+                    delete
+                    </span>
                 </div>
             </div>
         </div>
@@ -39,6 +48,10 @@ const clearList = () => {
     while(myList.firstChild) {
         myList.removeChild(myList.lastChild);
     }
+}
+
+const removeItem = () => {
+    console.log('teste')
 }
 
 const loadList = () => {
