@@ -4,33 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="./src/css/index.css">
     <title>Nova Tarefa</title>
 </head>
 
     <body>
         <div class="title-bar">
-            <div class="title-page">Lista de Tarefas</div>
+            <div class="title-page">Nova Tarefa</div>
         </div>
     
         <main >          
             <section class="add-task">
-                <form>
-                    <input type="text" id="inputTask" placeholder="Add New Task">
+                <div class="newTaskForm">
+                    <input type="text" id="inputTask" placeholder="Add New Task" required>
                     <label for="deadline" class="labelInput">Realizar até</label>
                     <input type="date" id="deadLine">
-                    <span onclick="newTask()"class="btnAddTask">Add</span>
-                </form>
+                    <span  onclick="addTask() " class="btnAddTask" id="btnNewTask">Add</span>
+                </div>
             </section>
         </main>
     
         <nav class="nav-bar">
             <ul>
-                <li>Início</li>
-                <li>Lista de Tarefas</li>
-                <li>Nova Tarefa</li>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./tasklist.html">Lista de Tarefas</a></li>
+                <li><a href="./taskregister.html">Nova Tarefa</a></li>
             </ul>
         </nav>
         
     </body>
+    <script type="text/javascript" src="./taskregister.js">
+</script>
 </html>

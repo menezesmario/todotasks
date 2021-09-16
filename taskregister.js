@@ -1,6 +1,5 @@
 'use strict';
 
-
 const getData = () => JSON.parse(localStorage.getItem('taskList')) ?? [];
 const setData = (data) => localStorage.setItem('taskList', JSON.stringify(data)) 
 
@@ -33,25 +32,6 @@ const createTask = (newTask, deadline, status) => {
     document.getElementById('myList').appendChild(task);
 }
 
-
-const clearList = () => {
-    const myList = document.getElementById('myList')
-    while(myList.firstChild) {
-        myList.removeChild(myList.lastChild);
-    }
-}
-
-const loadList = () => {
-    clearList();
-    const data = getData();
-    data.forEach(task => createTask(task.task, task.deadline, task.status));
-}
-
-// const addTask = (event) => {
-//     const add = event.click
-// }
-
-
 // DATE FORMAT
 let today = new Date();
 let day = today.getDate();
@@ -66,7 +46,6 @@ let currentDate = `${year}-${month}-${day}`
 document.getElementById('deadLine').value = currentDate;
 
 const deadline = document.getElementById('deadLine').value;
-
 
 const addTask = () => {
     const task = document.getElementById('inputTask').value;
@@ -85,8 +64,3 @@ const addTask = () => {
     document.getElementById('inputTask').value = '';
     console.log(data)
 }
-
-
-
-loadList();
-

@@ -7,6 +7,7 @@
     color: var(--fifth-color);
 }
 
+
 :root {
     --primary-color: #173F42;
     --second-color: #246369;
@@ -52,9 +53,31 @@
     justify-content: space-around;
 }
 
+.task-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+#myList {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+}
+
 .taskSection {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: column;
     width: 90%;
     margin: auto;
 }
@@ -127,6 +150,11 @@
 
 #status {
     color: var(--fourth-color); 
+}
+
+.add-task {
+    width: 80%;
+    margin: auto;
 }
 
 .newTaskForm {
