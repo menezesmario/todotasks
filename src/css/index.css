@@ -43,6 +43,30 @@ body {
 
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter {
+    margin: auto;
+}
+
+.btnOrder {
+    background-color: var(--fifth-color);
+    color: var(--second-color);
+    height: 40px;
+    width: 240px;
+    border: none;
+    margin: 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
 .title-bar {
     display: flex;
     flex-direction: column;

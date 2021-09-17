@@ -50,8 +50,6 @@ const clearList = () => {
     }
 }
 
-
-
 const removeItem = () => {
     let list = document.getElementsByClassName("remove")
     for(let i = 0; i < list.length; i++) {
@@ -64,6 +62,10 @@ const removeItem = () => {
             loadList();
         }        
     }
+}
+
+const filterByDeadline = () => {
+    console.log('filtrar')
 }
 
 const updateItem = () => {
