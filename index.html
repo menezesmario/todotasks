@@ -16,8 +16,13 @@
 
     <main>
         <div class="filter">
-            <button class="btnOrder" onclick="filterByDeadline()">Ordenar por deadline<span class="material-icons-outlined" style="color: var(--second-color)">
-                alarm</span>
+            <button class="btnOrder" id="btnOrder" onclick="orderByDeadline()">
+                <span class="labelBtnOrder" id="labelBtnOrder">
+                    Ordenar por deadline
+                </span>
+                <span class="material-icons-outlined" style="color: var(--second-color)">
+                    alarm
+                </span>
             </button>
         </div>
         <section class="task-list">

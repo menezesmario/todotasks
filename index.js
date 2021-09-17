@@ -64,8 +64,37 @@ const removeItem = () => {
     }
 }
 
-const filterByDeadline = () => {
-    console.log('filtrar')
+const orderByDeadline = () => {
+    const list = getData();
+    console.log(list)
+    list.sort(function(a,b) {        
+    return new Date(a.deadline) - new Date(b.deadline);    
+    })
+    setData(list)
+    loadList();
+
+    let btnOrder = document.getElementById('btnOrder');
+    btnOrder.setAttribute("onclick", "orderByCreationDate()");
+    let labelBtnOrder = document.getElementById("labelBtnOrder")
+    labelBtnOrder.innerHTML = "Ordenar por data de criação";
+    console.log(document.getElementById("btnOrder"));
+
+}
+
+const orderByCreationDate = () => {
+    const list = getData();
+    console.log(list)
+    list.sort(function(a,b){
+        return new Date(a.creation) - new Date(b.creation);
+    })
+    setData(list)
+    loadList();
+
+    let btnOrder = document.getElementById('btnOrder');
+    btnOrder.setAttribute("onclick", "orderByDeadline()");
+    let labelBtnOrder = document.getElementById("labelBtnOrder")
+    labelBtnOrder.innerHTML = "Ordenar por deadline";
+    console.log(document.getElementById("btnOrder"));
 }
 
 const updateItem = () => {
