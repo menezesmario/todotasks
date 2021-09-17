@@ -25,7 +25,7 @@ const createTask = (newTask, deadline, status) => {
                 </div>
             </div>
             <div class="btnSection">
-                <div id="btnEdit" class="btnTask">
+                <div id="btnEdit" onclick="updateItem()" class="btnTask update">
                     <span class="material-icons-outlined" style="color: var(--second-color)">
                     edit
                     </span>
@@ -50,10 +50,12 @@ const clearList = () => {
     }
 }
 
+
+
 const removeItem = () => {
-    let remove = document.getElementsByClassName("remove")
-    for(let i = 0; i < remove.length; i++) {
-        remove[i].onclick = function() {
+    let list = document.getElementsByClassName("remove")
+    for(let i = 0; i < list.length; i++) {
+        list[i].onclick = function() {
             console.log([i])
             const data = getData()
             console.log(data[i]);
@@ -61,8 +63,30 @@ const removeItem = () => {
             setData(data);
             loadList();
         }        
+    }
 }
 
+const updateItem = () => {
+    let list = document.getElementsByClassName("update")
+    for(let i = 0; i < list.length; i++) {
+        list[i].onclick = function() {
+            const data = getData();
+            // location.pathname = "/taskregister.html";
+            document.getElementById('inputTask').focus();
+            let inputTask = document.getElementById('inputTask');
+            inputTask.value = data[i].task;
+            let inputDeadline = document.getElementById('deadLine');
+            inputDeadline.value = data[i].deadline;
+            let btnUpdate = document.getElementById('btnNewTask');
+            btnUpdate.innerHTML = "Update"
+            btnUpdate.onclick = function() {
+                data[i].task = inputTask.value;
+                data[i].deadline = inputDeadline.value;
+                setData(data);
+                loadList();
+            };           
+        }        
+    }
 }
 
 const loadList = () => {

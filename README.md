@@ -41,11 +41,11 @@ Abaixo estão listadas as features a serem trabalhadas durante a semana:
 	- Update de ToDos;
 	- Deletar ToDos;
 
-- [ ]   **Update dos ToDos**    
+- [X]   **Update dos ToDos**    
 
 	Todos os campos poderão ser atualizados com a exceção da data de criação.
 
-- [ ]   **Deletar ToDos**
+- [X]   **Deletar ToDos**
 
     O usuário poderá deletar os ToDos individualmente.
     

@@ -142,11 +142,13 @@ body {
 
 #btnEdit {
     background-color: var(--fifth-color);
+    cursor: pointer;
 }
 
 #btnRemove {
     background-color: var(--danger-color);
     color: white;
+    cursor: pointer;
 }
 
 
@@ -215,6 +217,14 @@ body {
     border-radius: 50%;
     color: var(--primary-color);
     font-weight: bold;
+    cursor: pointer;
+    transition-duration: 200ms;
+}
+
+.btnAddTask:hover {
+    background-color: var(--danger-color);
+    width: 72px;
+    height: 72px;
 }
 
 
