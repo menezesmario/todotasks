@@ -72,13 +72,11 @@ const orderByDeadline = () => {
     })
     setData(list)
     loadList();
-
     let btnOrder = document.getElementById('btnOrder');
     btnOrder.setAttribute("onclick", "orderByCreationDate()");
     let labelBtnOrder = document.getElementById("labelBtnOrder")
     labelBtnOrder.innerHTML = "Ordenar por data de criação";
     console.log(document.getElementById("btnOrder"));
-
 }
 
 const orderByCreationDate = () => {
@@ -113,6 +111,9 @@ const updateItem = () => {
             btnUpdate.onclick = function() {
                 data[i].task = inputTask.value;
                 data[i].deadline = inputDeadline.value;
+                btnUpdate.innerHTML = "Save"
+                inputTask.value = "";
+                inputDeadline = "";
                 setData(data);
                 loadList();
             };           

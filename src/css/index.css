@@ -179,7 +179,23 @@ main {
     cursor: pointer;
 }
 
+#btnAddTag {
+    background-color: var(--fifth-color);
+    cursor: pointer;
+}
 
+
+
+.tagsSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#inputTags {
+    width: 90%;
+}
 
 .taskHeader {
     display: flex;

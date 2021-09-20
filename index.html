@@ -38,7 +38,13 @@
                 <input type="text" id="inputTask" placeholder="Add New Task" required>
                 <label for="deadline" class="labelInput">Realizar até</label>
                 <input type="date" id="deadLine">
-                <span  onclick="addTask() " class="btnAddTask" id="btnNewTask">Save</span>
+                <div class="tagsSection">
+                    <input type="text" id="inputTags" placeholder="Add Tags" required>
+                    <div id="btnAddTag" onclick="addTag()" class="btnTask update">
+                        <span class="material-icons-outlined" style="color: var(--second-color)">add</span>
+                    </div>
+                </div>
+                    <span  onclick="addTask() " class="btnAddTask" id="btnNewTask">Save</span>                
             </div>
         </section>
     </main>
