@@ -9,7 +9,7 @@
 const getData = () => JSON.parse(localStorage.getItem('taskList')) ?? [];
 const setData = (data) => localStorage.setItem('taskList', JSON.stringify(data)) 
 
-const createTask = (newTask, deadline, status) => {
+const createTask = (newTask, deadline, status, tag) => {
     let task = document.createElement('li');
     task.classList.add('taskItem');
     task.innerHTML = `
@@ -20,7 +20,8 @@ const createTask = (newTask, deadline, status) => {
                     <span id="deadline">${deadline}</span>
                 </div>
                 <div class="taskInfo">
-                    <span id="creation"></span>
+                    <span id="tag">${tag}</span>
+                    <span id="creation"></span>                    
                     <span id="status">Status: <input type="checkbox" ${status}></span>
                 </div>
             </div>
@@ -106,6 +107,9 @@ const updateItem = () => {
             inputTask.value = data[i].task;
             let inputDeadline = document.getElementById('deadLine');
             inputDeadline.value = data[i].deadline;
+            let inputTag = document.getElementById('inputTags');
+            inputTag.value = data[i].tag;
+            console.log(data[i].tag)
             let btnUpdate = document.getElementById('btnNewTask');
             btnUpdate.innerHTML = "Update"
             btnUpdate.onclick = function() {
@@ -124,7 +128,7 @@ const updateItem = () => {
 const loadList = () => {
     clearList();
     const data = getData();
-    data.forEach(task => createTask(task.task, task.deadline, task.status));
+    data.forEach(task => createTask(task.task, task.deadline, task.status, task.tag));
 }
 
 
@@ -147,13 +151,15 @@ const deadline = document.getElementById('deadLine').value;
 const addTask = () => {
     const task = document.getElementById('inputTask').value;
     const deadline = document.getElementById('deadLine').value;
+    const tag = document.getElementById('inputTags').value;
+
     let currentDate = new Date();
     currentDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`;
     const data = getData();
 
     if (deadline !== ""){
         
-        data.push({'task': task, 'status': '', 'deadline': deadline, 'creation': currentDate})
+        data.push({'task': task, 'status': '', 'deadline': deadline, 'creation': currentDate, 'tags': tag})
         setData(data);
         loadList();
     } 
@@ -161,6 +167,15 @@ const addTask = () => {
     document.getElementById('inputTask').value = '';
     console.log(data)
 }
+
+// const addTag = () => {
+//     const tag = document.getElementById('inputTags').value;
+//     const tags = [];
+//     if(tag !== ""){
+//         tags.push(tag)
+//     }
+//     console.log(tags)
+// }
 
 
 
